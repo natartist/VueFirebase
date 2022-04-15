@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Layout>
+    <div class="files">
+      <h1>Sistema de registro de archivos</h1>
+
+      <!-- Necesitamos componente para cargar un archivos -->
+      <FileUpload />
+      <!-- Mostrar los archivos -->
+      
+    </div>
+  </Layout>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Layout from "../layout/Layout.vue";
+import FileUpload from "@/components/files/FileUpload.vue";
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    Layout,
+    FileUpload
+  },
+  setup() {
+    return {
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .files {
+    width: 400px;
+    margin: 50px auto;
+  }
+</style>
